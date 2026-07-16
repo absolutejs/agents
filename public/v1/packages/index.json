@@ -1,6 +1,6 @@
 {
   "schema": "https://absolutejs.github.io/agents/schemas/package-registry-index/v1.json",
-  "generatedAt": "2026-07-16T06:00:57.339Z",
+  "generatedAt": "2026-07-16T06:05:11.055Z",
   "count": 24,
   "packages": [
     {
@@ -28,9 +28,9 @@
     },
     {
       "name": "@absolutejs/agents-mcp",
-      "version": "0.1.1",
+      "version": "0.2.0",
       "category": "discovery",
-      "description": "Official MCP server for finding verified agents in the AbsoluteJS public registry.",
+      "description": "Official MCP server for finding verified agents and production agent-first AbsoluteJS packages.",
       "npm": "https://www.npmjs.com/package/@absolutejs/agents-mcp",
       "repository": "https://github.com/absolutejs/agents-mcp",
       "standards": [
