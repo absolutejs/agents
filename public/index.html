@@ -4,7 +4,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>AbsoluteJS Agent Registry</title>
-    <meta name="description" content="Discover signed, open-protocol AI agents built with AbsoluteJS." />
+    <meta name="description" content="Discover signed open-protocol agents and production agent-first AbsoluteJS packages." />
     <link rel="alternate" type="application/json" href="./v1/agents/index.json" title="Agent registry index" />
     <link rel="sitemap" type="application/xml" href="./agents-sitemap.xml" />
     <script type="application/ld+json">
@@ -16,7 +16,7 @@
       h1 { font-size: clamp(2.5rem, 8vw, 5.5rem); line-height: .95; letter-spacing: -.06em; margin: 0 0 1.5rem; }
       p { max-width: 48rem; font-size: 1.1rem; }
       input { width: min(100%, 38rem); padding: .9rem 1rem; font: inherit; border: 1px solid #8888; border-radius: .7rem; }
-      #agents { display: grid; grid-template-columns: repeat(auto-fit, minmax(17rem, 1fr)); gap: 1rem; padding: 0; }
+      #agents, #packages { display: grid; grid-template-columns: repeat(auto-fit, minmax(17rem, 1fr)); gap: 1rem; padding: 0; }
       article { border: 1px solid #8885; border-radius: 1rem; padding: 1rem; }
       code { overflow-wrap: anywhere; }
       nav { display: flex; flex-wrap: wrap; gap: 1rem; margin: 2rem 0; }
@@ -26,17 +26,22 @@
     <main>
       <h1>Agents worth finding.</h1>
       <p>Signed discovery documents, explicit capabilities and effects, open MCP/A2A interfaces, and real authentication metadata. Listings help agents find each other; they never bypass authorization.</p>
-      <nav><a href="./v1/agents/index.json">Machine index</a><a href="./agents.txt">agents.txt</a><a href="https://github.com/absolutejs/agents">Submit an agent</a></nav>
+      <nav><a href="./v1/agents/index.json">Agent index</a><a href="./v1/packages/index.json">Package index</a><a href="./.well-known/absolute-agent.json">Signed descriptor</a><a href="./agents.txt">agents.txt</a><a href="https://github.com/absolutejs/agents">Submit an agent</a></nav>
       <label for="search">Search agents</label><br />
       <input id="search" type="search" placeholder="Capability, category, protocol, or publisher" autocomplete="off" />
       <p id="status" role="status">Loading registry…</p>
       <section id="agents" aria-label="Registered agents"></section>
+      <h2>Agent-first framework packages</h2>
+      <p>Open contracts for auth, delegation, discovery, protocols, policy, payments, conformance, reputation, operations, and safe execution.</p>
+      <section id="packages" aria-label="AbsoluteJS packages"></section>
     </main>
     <script type="module">
       const index = await fetch('./v1/agents/index.json').then((response) => response.json());
+      const packageIndex = await fetch('./v1/packages/index.json').then((response) => response.json());
       const input = document.querySelector('#search');
       const list = document.querySelector('#agents');
       const status = document.querySelector('#status');
+      const packageList = document.querySelector('#packages');
       const render = () => {
         const query = input.value.trim().toLowerCase();
         const agents = index.agents.filter(({ agent }) => JSON.stringify(agent).toLowerCase().includes(query));
@@ -52,6 +57,14 @@
         }));
       };
       input.addEventListener('input', render); render();
+      packageList.replaceChildren(...packageIndex.packages.map((pkg) => {
+        const article = document.createElement('article');
+        const title = document.createElement('h3');
+        const link = document.createElement('a'); link.href = pkg.npm; link.textContent = pkg.name; title.append(link);
+        const description = document.createElement('p'); description.textContent = pkg.description;
+        const version = document.createElement('code'); version.textContent = `v${pkg.version} · ${pkg.category}`;
+        article.append(title, description, version); return article;
+      }));
     </script>
   </body>
 </html>

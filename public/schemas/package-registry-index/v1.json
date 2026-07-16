@@ -1,0 +1,13 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://absolutejs.github.io/agents/schemas/package-registry-index/v1.json",
+  "title": "AbsoluteJS Agent-First Package Index",
+  "type": "object",
+  "required": ["schema", "generatedAt", "count", "packages"],
+  "properties": {
+    "schema": { "const": "https://absolutejs.github.io/agents/schemas/package-registry-index/v1.json" },
+    "generatedAt": { "type": "string", "format": "date-time" }, "count": { "type": "integer", "minimum": 0 },
+    "packages": { "type": "array", "items": { "type": "object", "required": ["name", "version", "category", "description", "npm", "repository"], "properties": { "name": { "type": "string", "pattern": "^@absolutejs/" }, "version": { "type": "string" }, "category": { "type": "string" }, "description": { "type": "string" }, "npm": { "type": "string", "format": "uri" }, "repository": { "type": "string", "format": "uri" }, "standards": { "type": "array", "items": { "type": "string" } } }, "additionalProperties": false } }
+  },
+  "additionalProperties": false
+}

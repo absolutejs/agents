@@ -1,0 +1,42 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://absolutejs.github.io/agents/schemas/agent-discovery/v1.json",
+  "title": "AbsoluteJS Agent Discovery Document",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["$schema", "id", "name", "description", "version", "url", "publisher", "capabilities", "interfaces", "createdAt", "updatedAt"],
+  "properties": {
+    "$schema": { "const": "https://absolutejs.github.io/agents/schemas/agent-discovery/v1.json" },
+    "id": { "$ref": "#/$defs/httpsUrl" },
+    "name": { "type": "string", "minLength": 1, "maxLength": 120 },
+    "description": { "type": "string", "minLength": 1, "maxLength": 2000 },
+    "version": { "type": "string", "minLength": 1, "maxLength": 64 },
+    "url": { "$ref": "#/$defs/httpsUrl" },
+    "publisher": { "$ref": "#/$defs/publisher" },
+    "capabilities": { "type": "array", "minItems": 1, "maxItems": 256, "items": { "$ref": "#/$defs/capability" } },
+    "interfaces": { "type": "array", "minItems": 1, "maxItems": 32, "items": { "$ref": "#/$defs/interface" } },
+    "authentication": { "type": "object" },
+    "categories": { "$ref": "#/$defs/stringList" },
+    "tags": { "$ref": "#/$defs/stringList" },
+    "languages": { "$ref": "#/$defs/stringList" },
+    "regions": { "$ref": "#/$defs/stringList" },
+    "statusUrl": { "$ref": "#/$defs/httpsUrl" },
+    "privacyUrl": { "$ref": "#/$defs/httpsUrl" },
+    "termsUrl": { "$ref": "#/$defs/httpsUrl" },
+    "iconUrl": { "$ref": "#/$defs/httpsUrl" },
+    "documentationUrl": { "$ref": "#/$defs/httpsUrl" },
+    "paymentProtocols": { "$ref": "#/$defs/stringList" },
+    "examples": { "type": "array", "maxItems": 32, "items": { "type": "object", "required": ["title", "prompt"], "properties": { "title": { "type": "string" }, "prompt": { "type": "string" }, "capabilityId": { "type": "string" } }, "additionalProperties": false } },
+    "relatedAgents": { "type": "array", "maxItems": 64, "items": { "$ref": "#/$defs/httpsUrl" } },
+    "createdAt": { "type": "string", "format": "date-time" },
+    "updatedAt": { "type": "string", "format": "date-time" },
+    "expiresAt": { "type": "string", "format": "date-time" }
+  },
+  "$defs": {
+    "httpsUrl": { "type": "string", "format": "uri", "pattern": "^https://" },
+    "stringList": { "type": "array", "maxItems": 128, "items": { "type": "string", "minLength": 1, "maxLength": 128 }, "uniqueItems": true },
+    "publisher": { "type": "object", "additionalProperties": false, "required": ["id", "name"], "properties": { "id": { "$ref": "#/$defs/httpsUrl" }, "name": { "type": "string", "minLength": 1 }, "url": { "$ref": "#/$defs/httpsUrl" }, "jwksUri": { "$ref": "#/$defs/httpsUrl" }, "contact": { "type": "string" } } },
+    "capability": { "type": "object", "additionalProperties": false, "required": ["id", "title", "description"], "properties": { "id": { "type": "string", "minLength": 1, "maxLength": 160 }, "title": { "type": "string", "minLength": 1, "maxLength": 160 }, "description": { "type": "string", "minLength": 1, "maxLength": 2000 }, "tags": { "$ref": "#/$defs/stringList" }, "inputSchema": { "type": "object" }, "outputSchema": { "type": "object" }, "effects": { "type": "array", "uniqueItems": true, "items": { "enum": ["read", "write", "delete", "external", "financial", "communication", "code-execution"] } }, "scopes": { "$ref": "#/$defs/stringList" }, "approval": { "enum": ["never", "policy", "always"] }, "price": { "type": "object", "required": ["currency", "amount"], "properties": { "currency": { "type": "string" }, "amount": { "type": "string" }, "unit": { "type": "string" } }, "additionalProperties": false } } },
+    "interface": { "type": "object", "additionalProperties": false, "required": ["type", "url"], "properties": { "type": { "enum": ["a2a", "arazzo", "mcp", "http", "openapi", "webmcp", "websocket"] }, "url": { "$ref": "#/$defs/httpsUrl" }, "protocolVersion": { "type": "string" }, "contentTypes": { "$ref": "#/$defs/stringList" } } }
+  }
+}

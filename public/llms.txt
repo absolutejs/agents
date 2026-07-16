@@ -4,6 +4,13 @@ This site is a public, reviewable registry of signed AI agent discovery document
 
 - Machine registry metadata: /.well-known/absolute-agent-registry.json
 - Agent index: /v1/agents/index.json
+- Package index: /v1/packages/index.json
+- Signed discovery document: /.well-known/absolute-agent.json
+- Public verification keys: /.well-known/jwks.json
+- Agent discovery JSON Schema: /schemas/agent-discovery/v1.json
+- Reputation JSON-LD context: /contexts/reputation/v1
+- OpenAPI description: /openapi.json
+- Arazzo workflow: /arazzo.json
 - Crawler index: /agents.txt
 - Sitemap: /agents-sitemap.xml
 - Submission: https://github.com/absolutejs/agents/pulls

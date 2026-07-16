@@ -1,0 +1,13 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://absolutejs.github.io/agents/schemas/agent-registry-index/v1.json",
+  "title": "AbsoluteJS Verified Agent Index",
+  "type": "object",
+  "required": ["schema", "generatedAt", "count", "agents"],
+  "properties": {
+    "schema": { "const": "https://absolutejs.github.io/agents/schemas/agent-registry-index/v1.json" },
+    "generatedAt": { "type": "string", "format": "date-time" }, "count": { "type": "integer", "minimum": 0 },
+    "agents": { "type": "array", "items": { "type": "object", "required": ["agent", "signatures", "verified"], "properties": { "agent": { "$ref": "../../agent-discovery/v1.json" }, "signatures": { "type": "array", "minItems": 1 }, "verified": { "const": true } } } }
+  },
+  "additionalProperties": false
+}

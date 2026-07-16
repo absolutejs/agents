@@ -1,0 +1,6 @@
+{
+  "arazzo": "1.1.0",
+  "info": { "title": "Discover AbsoluteJS agents and packages", "version": "1.0.0", "summary": "Read the public agent and package catalogs." },
+  "sourceDescriptions": [{ "name": "registry", "url": "https://absolutejs.github.io/agents/openapi.json", "type": "openapi" }],
+  "workflows": [{ "workflowId": "discoverAbsoluteJS", "summary": "Retrieve both public discovery indexes.", "steps": [{ "stepId": "agents", "operationId": "listVerifiedAgents", "successCriteria": [{ "condition": "$statusCode == 200" }] }, { "stepId": "packages", "operationId": "listAbsolutePackages", "successCriteria": [{ "condition": "$statusCode == 200" }] }], "outputs": { "agents": "$steps.agents.outputs", "packages": "$steps.packages.outputs" } }]
+}

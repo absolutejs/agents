@@ -1,6 +1,102 @@
 {
-  "schema": "https://absolutejs.com/schemas/agent-registry-index/v1",
-  "generatedAt": "2026-07-16T04:33:13.312Z",
-  "count": 0,
-  "agents": []
+  "schema": "https://absolutejs.github.io/agents/schemas/agent-registry-index/v1.json",
+  "generatedAt": "2026-07-16T05:57:05.737Z",
+  "count": 1,
+  "agents": [
+    {
+      "agent": {
+        "$schema": "https://absolutejs.github.io/agents/schemas/agent-discovery/v1.json",
+        "id": "https://absolutejs.github.io/agents/.well-known/absolute-agent.json",
+        "name": "AbsoluteJS Registry Search Agent",
+        "description": "Finds verified agents and production AbsoluteJS packages through open, static machine-readable indexes.",
+        "version": "1.0.0",
+        "url": "https://absolutejs.github.io/agents/",
+        "publisher": {
+          "id": "https://github.com/absolutejs",
+          "name": "AbsoluteJS",
+          "url": "https://github.com/absolutejs",
+          "jwksUri": "https://absolutejs.github.io/agents/.well-known/jwks.json"
+        },
+        "capabilities": [
+          {
+            "id": "registry.agents.search",
+            "title": "Search verified agents",
+            "description": "Reads the signed public agent index and filters its discovery metadata.",
+            "effects": [
+              "read"
+            ],
+            "approval": "never",
+            "tags": [
+              "discovery",
+              "registry",
+              "agents"
+            ]
+          },
+          {
+            "id": "registry.packages.search",
+            "title": "Search AbsoluteJS packages",
+            "description": "Reads the public package catalog for agent-first framework capabilities.",
+            "effects": [
+              "read"
+            ],
+            "approval": "never",
+            "tags": [
+              "absolutejs",
+              "packages",
+              "discovery"
+            ]
+          }
+        ],
+        "interfaces": [
+          {
+            "type": "http",
+            "url": "https://absolutejs.github.io/agents/v1/agents/index.json",
+            "contentTypes": [
+              "application/json"
+            ]
+          },
+          {
+            "type": "openapi",
+            "url": "https://absolutejs.github.io/agents/openapi.json",
+            "protocolVersion": "3.1.1"
+          },
+          {
+            "type": "arazzo",
+            "url": "https://absolutejs.github.io/agents/arazzo.json",
+            "protocolVersion": "1.1.0"
+          }
+        ],
+        "authentication": {
+          "schemes": [
+            "none"
+          ]
+        },
+        "categories": [
+          "developer-tools",
+          "agent-discovery"
+        ],
+        "tags": [
+          "absolutejs",
+          "signed",
+          "open-protocol"
+        ],
+        "languages": [
+          "en"
+        ],
+        "documentationUrl": "https://github.com/absolutejs/agents#readme",
+        "createdAt": "2026-07-16T00:00:00.000Z",
+        "updatedAt": "2026-07-16T05:56:09.204Z"
+      },
+      "signatures": [
+        {
+          "algorithm": "Ed25519",
+          "keyId": "https://absolutejs.github.io/agents/.well-known/jwks.json#absolutejs-registry-2026",
+          "createdAt": "2026-07-16T05:56:09.206Z",
+          "digest": "2X52qw1r95zYFLYQQdgyj2684Z0Z-o6tMUwQJw-YRO4",
+          "value": "TgmVfA2JuhxJuXSQc0zJsWxJbaz9LlIfxiMVqlDjhPc44V7JDdpswmyuxHH_EpPClJBOTxIc_2hNXSKsvhdSDA"
+        }
+      ],
+      "verified": true
+    }
+  ]
 }

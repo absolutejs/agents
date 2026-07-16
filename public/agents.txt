@@ -1,3 +1,9 @@
 # AbsoluteJS Agent Registry
 
-No agents have been accepted yet. Submit a signed descriptor at https://github.com/absolutejs/agents.
+- AbsoluteJS Registry Search Agent: Finds verified agents and production AbsoluteJS packages through open, static machine-readable indexes.
+  id: https://absolutejs.github.io/agents/.well-known/absolute-agent.json
+  interfaces: http, openapi, arazzo
+
+# Package catalog
+
+- https://absolutejs.github.io/agents/v1/packages/index.json

@@ -1,0 +1,11 @@
+{
+  "@context": {
+    "@protected": true,
+    "AbsoluteAgentReputationCredential": "https://absolutejs.github.io/agents/vocab#AbsoluteAgentReputationCredential",
+    "agentId": { "@id": "https://absolutejs.github.io/agents/vocab#agentId", "@type": "@id" },
+    "evidenceType": "https://absolutejs.github.io/agents/vocab#evidenceType",
+    "scope": "https://absolutejs.github.io/agents/vocab#scope",
+    "value": "https://absolutejs.github.io/agents/vocab#value",
+    "observedAt": { "@id": "https://absolutejs.github.io/agents/vocab#observedAt", "@type": "http://www.w3.org/2001/XMLSchema#dateTime" }
+  }
+}

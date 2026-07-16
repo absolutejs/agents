@@ -1,0 +1,18 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://absolutejs.github.io/agents/schemas/agent-registry/v1.json",
+  "title": "AbsoluteJS Agent Registry Metadata",
+  "type": "object",
+  "required": ["schema", "name", "description", "searchEndpoint", "supportedDiscoverySchemas", "requiresVerifiedSignatures"],
+  "properties": {
+    "schema": { "const": "https://absolutejs.github.io/agents/schemas/agent-registry/v1.json" },
+    "name": { "type": "string" }, "description": { "type": "string" },
+    "searchEndpoint": { "type": "string", "format": "uri" }, "packageEndpoint": { "type": "string", "format": "uri" },
+    "openapi": { "type": "string", "format": "uri" }, "arazzo": { "type": "string", "format": "uri" },
+    "submissionEndpoint": { "type": "string", "format": "uri" },
+    "supportedDiscoverySchemas": { "type": "array", "items": { "type": "string", "format": "uri" } },
+    "requiresVerifiedSignatures": { "type": "boolean" },
+    "federationFeeds": { "type": "array", "items": { "type": "string", "format": "uri" } }
+  },
+  "additionalProperties": false
+}

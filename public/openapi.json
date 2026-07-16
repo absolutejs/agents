@@ -1,0 +1,9 @@
+{
+  "openapi": "3.1.1",
+  "info": { "title": "AbsoluteJS Public Agent Registry", "version": "1.0.0", "description": "Read-only indexes of verified agents and agent-first AbsoluteJS packages." },
+  "servers": [{ "url": "https://absolutejs.github.io/agents" }],
+  "paths": {
+    "/v1/agents/index.json": { "get": { "operationId": "listVerifiedAgents", "summary": "List verified agent discovery records", "responses": { "200": { "description": "Verified agent index", "content": { "application/json": { "schema": { "type": "object" } } } } } } },
+    "/v1/packages/index.json": { "get": { "operationId": "listAbsolutePackages", "summary": "List agent-first AbsoluteJS packages", "responses": { "200": { "description": "Package index", "content": { "application/json": { "schema": { "type": "object" } } } } } } }
+  }
+}

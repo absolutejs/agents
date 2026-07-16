@@ -6,6 +6,10 @@ Absolute-compatible open discovery document.
 - Human catalog: <https://absolutejs.github.io/agents/>
 - Registry metadata: <https://absolutejs.github.io/agents/.well-known/absolute-agent-registry.json>
 - Machine index: <https://absolutejs.github.io/agents/v1/agents/index.json>
+- Package index: <https://absolutejs.github.io/agents/v1/packages/index.json>
+- Signed registry descriptor: <https://absolutejs.github.io/agents/.well-known/absolute-agent.json>
+- OpenAPI: <https://absolutejs.github.io/agents/openapi.json>
+- Arazzo workflow: <https://absolutejs.github.io/agents/arazzo.json>
 - Crawler index: <https://absolutejs.github.io/agents/agents.txt>
 - Sitemap: <https://absolutejs.github.io/agents/agents-sitemap.xml>
 
@@ -22,10 +26,19 @@ Absolute-compatible open discovery document.
    publisher/domain review.
 
 Descriptors use the provider-neutral
-`https://absolutejs.com/schemas/agent-discovery/v1` contract and may point to
-MCP, A2A, HTTP, OpenAPI, or WebSocket interfaces. A listing is discovery, not
+`https://absolutejs.github.io/agents/schemas/agent-discovery/v1.json` contract
+and may point to MCP, A2A, Arazzo, WebMCP, HTTP, OpenAPI, or WebSocket
+interfaces. The former `absolutejs.com` identifier remains accepted for
+migration, but new descriptors should use the live immutable schema. A listing is discovery, not
 authorization: callers must still follow the agent's advertised OAuth and
 approval requirements.
+
+## Rotate the registry signing key
+
+`bun run sign:registry-agent` reads `REGISTRY_AGENT_SIGNING_JWK`, writes only
+the signed envelope and public JWK, and never logs private key material. The
+private key is held as a GitHub Actions secret; published descriptors identify
+the exact key with a JWKS fragment.
 
 The repository model is intentional for launch. Every listing and removal has
 public history, code-owner review, and a reproducible generated index. A

@@ -1,10 +1,14 @@
 {
-  "schema": "https://absolutejs.com/schemas/agent-registry/v1",
+  "schema": "https://absolutejs.github.io/agents/schemas/agent-registry/v1.json",
   "name": "AbsoluteJS Public Agent Registry",
-  "description": "A reviewable index of signed, open-protocol AI agents.",
+  "description": "A reviewable index of signed, open-protocol AI agents and agent-first packages.",
   "searchEndpoint": "https://absolutejs.github.io/agents/v1/agents/index.json",
+  "packageEndpoint": "https://absolutejs.github.io/agents/v1/packages/index.json",
+  "openapi": "https://absolutejs.github.io/agents/openapi.json",
+  "arazzo": "https://absolutejs.github.io/agents/arazzo.json",
   "submissionEndpoint": "https://github.com/absolutejs/agents/pulls",
   "supportedDiscoverySchemas": [
+    "https://absolutejs.github.io/agents/schemas/agent-discovery/v1.json",
     "https://absolutejs.com/schemas/agent-discovery/v1"
   ],
   "requiresVerifiedSignatures": true,

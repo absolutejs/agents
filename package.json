@@ -7,11 +7,12 @@
   "license": "MIT",
   "scripts": {
     "build": "bun scripts/build.ts",
+    "sign:registry-agent": "bun scripts/sign-registry-agent.ts",
     "test": "bun test",
     "check": "bun run build && bun test"
   },
   "devDependencies": {
-    "@absolutejs/agent-discovery": "^0.1.0",
+    "@absolutejs/agent-discovery": "^0.2.0",
     "@types/bun": "^1.3.14",
     "typescript": "^5.9.0"
   }
