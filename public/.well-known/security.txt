@@ -1,0 +1,5 @@
+Contact: https://github.com/absolutejs/agents/security/advisories/new
+Expires: 2027-07-16T00:00:00.000Z
+Preferred-Languages: en
+Canonical: https://absolutejs.github.io/agents/.well-known/security.txt
+Policy: https://github.com/absolutejs/agents/blob/main/SECURITY.md

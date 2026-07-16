@@ -12,6 +12,7 @@ Absolute-compatible open discovery document.
 - Arazzo workflow: <https://absolutejs.github.io/agents/arazzo.json>
 - Crawler index: <https://absolutejs.github.io/agents/agents.txt>
 - Sitemap: <https://absolutejs.github.io/agents/agents-sitemap.xml>
+- Security contact: <https://absolutejs.github.io/agents/.well-known/security.txt>
 
 ## List an agent
 

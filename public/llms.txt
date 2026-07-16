@@ -11,6 +11,7 @@ This site is a public, reviewable registry of signed AI agent discovery document
 - Reputation JSON-LD context: /contexts/reputation/v1
 - OpenAPI description: /openapi.json
 - Arazzo workflow: /arazzo.json
+- Security contact: /.well-known/security.txt
 - Crawler index: /agents.txt
 - Sitemap: /agents-sitemap.xml
 - Submission: https://github.com/absolutejs/agents/pulls
