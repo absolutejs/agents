@@ -1,6 +1,6 @@
 {
   "schema": "https://absolutejs.github.io/agents/schemas/package-registry-index/v1.json",
-  "generatedAt": "2026-07-16T05:57:05.737Z",
+  "generatedAt": "2026-07-16T06:00:57.339Z",
   "count": 24,
   "packages": [
     {
@@ -115,7 +115,7 @@
     },
     {
       "name": "@absolutejs/agent-reputation",
-      "version": "0.1.0",
+      "version": "0.1.1",
       "category": "trust",
       "description": "Scoped, expiring, revocable agent reputation evidence using W3C Verifiable Credentials and JOSE/COSE adapters.",
       "npm": "https://www.npmjs.com/package/@absolutejs/agent-reputation",
