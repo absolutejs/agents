@@ -1,0 +1,18 @@
+{
+  "name": "@absolutejs/public-agent-registry",
+  "private": true,
+  "version": "0.1.0",
+  "description": "The public, signed, searchable registry of AbsoluteJS agents.",
+  "type": "module",
+  "license": "MIT",
+  "scripts": {
+    "build": "bun scripts/build.ts",
+    "test": "bun test",
+    "check": "bun run build && bun test"
+  },
+  "devDependencies": {
+    "@absolutejs/agent-discovery": "^0.1.0",
+    "@types/bun": "^1.3.14",
+    "typescript": "^5.9.0"
+  }
+}

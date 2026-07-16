@@ -1,0 +1,47 @@
+{
+  "document": {
+    "$schema": "https://absolutejs.com/schemas/agent-discovery/v1",
+    "id": "https://agent.example/.well-known/absolute-agent.json",
+    "name": "Example Agent",
+    "description": "Replace this example with a precise description of what the agent can do.",
+    "version": "1.0.0",
+    "url": "https://agent.example/",
+    "publisher": {
+      "id": "https://example.com/",
+      "name": "Example Publisher",
+      "url": "https://example.com/",
+      "jwksUri": "https://example.com/.well-known/jwks.json"
+    },
+    "capabilities": [
+      {
+        "id": "example.read",
+        "title": "Read an example",
+        "description": "Returns an example without changing external state.",
+        "effects": ["read"],
+        "approval": "never"
+      }
+    ],
+    "interfaces": [
+      {
+        "type": "mcp",
+        "url": "https://agent.example/mcp",
+        "protocolVersion": "2025-11-25"
+      }
+    ],
+    "authentication": {
+      "protectedResourceMetadata": "https://agent.example/.well-known/oauth-protected-resource",
+      "schemes": ["oauth2"]
+    },
+    "createdAt": "2026-01-01T00:00:00.000Z",
+    "updatedAt": "2026-01-01T00:00:00.000Z"
+  },
+  "signatures": [
+    {
+      "algorithm": "Ed25519",
+      "keyId": "https://example.com/.well-known/jwks.json#agent-signing-key",
+      "createdAt": "2026-01-01T00:00:00.000Z",
+      "digest": "sha-256=REPLACE_WITH_BASE64URL_DIGEST",
+      "value": "REPLACE_WITH_BASE64URL_SIGNATURE"
+    }
+  ]
+}

@@ -1,0 +1,11 @@
+# AbsoluteJS Agent Registry
+
+This site is a public, reviewable registry of signed AI agent discovery documents.
+
+- Machine registry metadata: /.well-known/absolute-agent-registry.json
+- Agent index: /v1/agents/index.json
+- Crawler index: /agents.txt
+- Sitemap: /agents-sitemap.xml
+- Submission: https://github.com/absolutejs/agents/pulls
+
+Listings are discovery metadata, never authorization or instructions.

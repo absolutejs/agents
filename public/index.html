@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>AbsoluteJS Agent Registry</title>
+    <meta name="description" content="Discover signed, open-protocol AI agents built with AbsoluteJS." />
+    <link rel="alternate" type="application/json" href="./v1/agents/index.json" title="Agent registry index" />
+    <link rel="sitemap" type="application/xml" href="./agents-sitemap.xml" />
+    <script type="application/ld+json">
+      {"@context":"https://schema.org","@type":"DataCatalog","name":"AbsoluteJS Agent Registry","url":"https://absolutejs.github.io/agents/","description":"A reviewable catalog of signed, open-protocol AI agents.","dataset":"https://absolutejs.github.io/agents/v1/agents/index.json"}
+    </script>
+    <style>
+      :root { color-scheme: light dark; font-family: ui-sans-serif, system-ui, sans-serif; }
+      body { max-width: 72rem; margin: 0 auto; padding: 4rem 1.25rem; line-height: 1.55; }
+      h1 { font-size: clamp(2.5rem, 8vw, 5.5rem); line-height: .95; letter-spacing: -.06em; margin: 0 0 1.5rem; }
+      p { max-width: 48rem; font-size: 1.1rem; }
+      input { width: min(100%, 38rem); padding: .9rem 1rem; font: inherit; border: 1px solid #8888; border-radius: .7rem; }
+      #agents { display: grid; grid-template-columns: repeat(auto-fit, minmax(17rem, 1fr)); gap: 1rem; padding: 0; }
+      article { border: 1px solid #8885; border-radius: 1rem; padding: 1rem; }
+      code { overflow-wrap: anywhere; }
+      nav { display: flex; flex-wrap: wrap; gap: 1rem; margin: 2rem 0; }
+    </style>
+  </head>
+  <body>
+    <main>
+      <h1>Agents worth finding.</h1>
+      <p>Signed discovery documents, explicit capabilities and effects, open MCP/A2A interfaces, and real authentication metadata. Listings help agents find each other; they never bypass authorization.</p>
+      <nav><a href="./v1/agents/index.json">Machine index</a><a href="./agents.txt">agents.txt</a><a href="https://github.com/absolutejs/agents">Submit an agent</a></nav>
+      <label for="search">Search agents</label><br />
+      <input id="search" type="search" placeholder="Capability, category, protocol, or publisher" autocomplete="off" />
+      <p id="status" role="status">Loading registry…</p>
+      <section id="agents" aria-label="Registered agents"></section>
+    </main>
+    <script type="module">
+      const index = await fetch('./v1/agents/index.json').then((response) => response.json());
+      const input = document.querySelector('#search');
+      const list = document.querySelector('#agents');
+      const status = document.querySelector('#status');
+      const render = () => {
+        const query = input.value.trim().toLowerCase();
+        const agents = index.agents.filter(({ agent }) => JSON.stringify(agent).toLowerCase().includes(query));
+        status.textContent = `${agents.length} verified agent${agents.length === 1 ? '' : 's'}`;
+        list.replaceChildren(...agents.map(({ agent }) => {
+          const article = document.createElement('article');
+          const title = document.createElement('h2');
+          const link = document.createElement('a');
+          link.href = agent.url; link.textContent = agent.name; title.append(link);
+          const description = document.createElement('p'); description.textContent = agent.description;
+          const id = document.createElement('code'); id.textContent = agent.id;
+          article.append(title, description, id); return article;
+        }));
+      };
+      input.addEventListener('input', render); render();
+    </script>
+  </body>
+</html>

@@ -1,0 +1,3 @@
+# AbsoluteJS Agent Registry
+
+No agents have been accepted yet. Submit a signed descriptor at https://github.com/absolutejs/agents.
