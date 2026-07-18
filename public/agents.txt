@@ -3,6 +3,9 @@
 - AbsoluteJS Registry Search Agent: Finds verified agents and production AbsoluteJS packages through open, static machine-readable indexes.
   id: https://absolutejs.github.io/agents/.well-known/absolute-agent.json
   interfaces: http, openapi, arazzo
+- onSpark AI: Provider-neutral partnership co-pilot for scoring readiness, finding partners, operating deal workflows, and proving outcomes in the onSpark Deal Ledger.
+  id: https://onspark.com/.well-known/absolute-agent.json
+  interfaces: mcp, a2a, arazzo
 
 # Package catalog
 
