@@ -1,6 +1,6 @@
 {
   "schema": "https://absolutejs.github.io/agents/schemas/package-registry-index/v1.json",
-  "generatedAt": "2026-07-18T01:05:03.568Z",
+  "generatedAt": "2026-07-31T19:07:01.841Z",
   "count": 24,
   "packages": [
     {
@@ -43,7 +43,7 @@
       "category": "discovery",
       "description": "Signed, provider-neutral agent discovery documents, registries, search, presentation, and hardened remote resolution.",
       "npm": "https://www.npmjs.com/package/@absolutejs/agent-discovery",
-      "repository": "https://github.com/absolutejs/agent-discovery"
+      "repository": "https://github.com/absolutejs/agent-modules/tree/main/discovery"
     },
     {
       "name": "@absolutejs/a2a",
@@ -103,7 +103,7 @@
       "category": "testing",
       "description": "Cross-protocol conformance suites for MCP, A2A, Arazzo, WebMCP, auth, and safe action semantics.",
       "npm": "https://www.npmjs.com/package/@absolutejs/agent-conformance",
-      "repository": "https://github.com/absolutejs/agent-conformance"
+      "repository": "https://github.com/absolutejs/agent-modules/tree/main/conformance"
     },
     {
       "name": "@absolutejs/agent-control",
@@ -111,7 +111,7 @@
       "category": "operations",
       "description": "Secure operator console and bound plan-then-execute playground for inspecting and approving agent actions.",
       "npm": "https://www.npmjs.com/package/@absolutejs/agent-control",
-      "repository": "https://github.com/absolutejs/agent-control"
+      "repository": "https://github.com/absolutejs/agent-modules/tree/main/control"
     },
     {
       "name": "@absolutejs/agent-reputation",
@@ -119,7 +119,7 @@
       "category": "trust",
       "description": "Scoped, expiring, revocable agent reputation evidence using W3C Verifiable Credentials and JOSE/COSE adapters.",
       "npm": "https://www.npmjs.com/package/@absolutejs/agent-reputation",
-      "repository": "https://github.com/absolutejs/agent-reputation",
+      "repository": "https://github.com/absolutejs/agent-modules/tree/main/reputation",
       "standards": [
         "W3C Verifiable Credentials 2.0"
       ]
@@ -130,7 +130,7 @@
       "category": "runtime",
       "description": "Runtime lifecycle and execution foundations for production agents.",
       "npm": "https://www.npmjs.com/package/@absolutejs/agent-runtime",
-      "repository": "https://github.com/absolutejs/agent-runtime"
+      "repository": "https://github.com/absolutejs/agent-modules/tree/main/runtime"
     },
     {
       "name": "@absolutejs/agent-sandbox",
@@ -138,7 +138,7 @@
       "category": "security",
       "description": "Isolation and resource controls for untrusted agent workloads.",
       "npm": "https://www.npmjs.com/package/@absolutejs/agent-sandbox",
-      "repository": "https://github.com/absolutejs/agent-sandbox"
+      "repository": "https://github.com/absolutejs/agent-modules/tree/main/sandbox"
     },
     {
       "name": "@absolutejs/agent-trust",
@@ -146,7 +146,7 @@
       "category": "trust",
       "description": "Trust decisions and evidence plumbing for agent interactions.",
       "npm": "https://www.npmjs.com/package/@absolutejs/agent-trust",
-      "repository": "https://github.com/absolutejs/agent-trust"
+      "repository": "https://github.com/absolutejs/agent-modules/tree/main/trust"
     },
     {
       "name": "@absolutejs/agent-memory",
@@ -154,7 +154,7 @@
       "category": "memory",
       "description": "Policy-aware durable agent memory.",
       "npm": "https://www.npmjs.com/package/@absolutejs/agent-memory",
-      "repository": "https://github.com/absolutejs/agent-memory"
+      "repository": "https://github.com/absolutejs/agent-modules/tree/main/memory"
     },
     {
       "name": "@absolutejs/agent-inbox",
@@ -162,7 +162,7 @@
       "category": "communication",
       "description": "Durable agent-to-human and agent-to-agent inbox workflows.",
       "npm": "https://www.npmjs.com/package/@absolutejs/agent-inbox",
-      "repository": "https://github.com/absolutejs/agent-inbox"
+      "repository": "https://github.com/absolutejs/agent-modules/tree/main/inbox"
     },
     {
       "name": "@absolutejs/wallet",
